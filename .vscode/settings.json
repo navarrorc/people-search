@@ -1,0 +1,12 @@
+{
+  "editor.fontSize": 18,
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": false,
+  "editor.minimap.enabled": true,
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "terminal.integrated.fontSize": 16
+}

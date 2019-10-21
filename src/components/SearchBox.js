@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const inputStyles = {
   fontSize: "1.2rem"
@@ -12,16 +12,39 @@ const iconStyles = {
 };
 
 const SearchBox = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const runSearch = () => {
+    if (!searchTerm) {
+      console.log("Searching All...");
+      return;
+    }
+
+    console.log(`Running search query...Searching for ${searchTerm}`);
+  };
+
+  const handleChange = event => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    runSearch();
+  };
+
   return (
-    <form className="">
+    <form onSubmit={handleSubmit}>
       <div className="form-group row flex justify-content-center">
         <div className="col-4">
           <input
+            value={searchTerm}
+            onChange={handleChange}
             style={inputStyles}
             className="form-control rounded-pill"
             placeholder="Search by name"
           />
           <i
+            onClick={runSearch}
             style={iconStyles}
             className="fas fa-search rounded-pill position-absolute  p-2"
           ></i>
